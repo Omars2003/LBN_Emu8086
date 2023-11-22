@@ -1,4 +1,4 @@
-     .model small
+    .model small
          .stack
          .data
    NOMBRE db 'Mi nombre en minusculas es omar',10,13
@@ -24,8 +24,8 @@
                                    ;de minusculas a mayusculas       
            mov cx,4
     repite:mov ah,[bx]
-           and ah,11011111b  
-           ;sub ah,32d
+           ;and ah,11011111b  
+           sub ah,32d              ;se resta 32d para que sea el mayus de ascii    o 20h
            
            mov dl,ah
            mov ah,02
@@ -58,8 +58,8 @@
            
   
            mov ah,[bx]
-           or ah,00100000b 
-           
+          ; or ah,00100000b 
+           add ah,32d             ;se suma 32d para con de mayus a minus,equivalente al or
            mov dl,ah 
            
            mov ah,02
